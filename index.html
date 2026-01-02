@@ -54,9 +54,7 @@ body {
     transform: scale(0.3);
     opacity: 0.9;
   }
-  70% {
-    opacity: 0.25;
-  }
+  70% { opacity: 0.25; }
   100% {
     transform: scale(4.4);
     opacity: 0;
@@ -91,7 +89,6 @@ body {
   z-index: 2;
 }
 
-/* smoke only around avatar */
 .avatar-smoke {
   position: absolute;
   inset: -40%;
@@ -107,12 +104,8 @@ body {
 }
 
 @keyframes avatarSmoke {
-  from {
-    transform: translate(0,0) scale(1);
-  }
-  to {
-    transform: translate(-8%, -6%) scale(1.15);
-  }
+  from { transform: translate(0,0) scale(1); }
+  to   { transform: translate(-8%, -6%) scale(1.15); }
 }
 
 /* TITLES */
@@ -199,6 +192,11 @@ h2 {
 
   <a class="button" href="#">ВИДЕО</a>
   <a class="button" href="#">ПРОЕКТЫ</a>
+
+  <!-- NEW RIDER BUTTON -->
+  <a class="button" href="rider.pdf" target="_blank">
+    РАЙДЕР
+  </a>
 
   <div class="section">
     Услуги аранжировщика<br><br>
