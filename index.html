@@ -17,10 +17,10 @@ body {
   color: #fff;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   min-height: 100vh;
-  overflow-y: auto; /* ВКЛЮЧАЕМ СКРОЛЛ */
+  overflow-y: auto;
 }
 
-/* ================= BACKGROUND ================= */
+/* ===== BACKGROUND ===== */
 .bg {
   position: fixed;
   inset: 0;
@@ -38,8 +38,8 @@ body {
 
 .wave-ring {
   position: absolute;
-  width: 20vmin;
-  height: 20vmin;
+  width: 18vmin;
+  height: 18vmin;
   border: 2px solid rgba(255,255,255,0.25);
   border-radius: 50%;
   animation: pulse 2.6s infinite ease-out;
@@ -54,7 +54,7 @@ body {
   100% { transform: scale(4.6); opacity: 0; }
 }
 
-/* ================= CONTENT ================= */
+/* ===== CONTENT ===== */
 .container {
   position: relative;
   z-index: 2;
@@ -77,29 +77,29 @@ body {
   height: 120px;
   border-radius: 50%;
   background: url("avatar.jpg") center/cover no-repeat;
-  border: 1px solid rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.25);
   position: relative;
   z-index: 2;
 }
 
 .avatar-smoke {
   position: absolute;
-  inset: -40%;
+  inset: -45%;
   background:
-    radial-gradient(circle at 30% 30%, rgba(255,255,255,0.12), transparent 60%),
-    radial-gradient(circle at 70% 60%, rgba(255,255,255,0.10), transparent 65%);
-  filter: blur(32px);
-  opacity: 0.6;
-  animation: avatarSmoke 18s linear infinite;
+    radial-gradient(circle at 30% 30%, rgba(255,255,255,0.14), transparent 60%),
+    radial-gradient(circle at 70% 60%, rgba(255,255,255,0.12), transparent 65%);
+  filter: blur(34px);
+  opacity: 0.65;
+  animation: avatarSmoke 20s linear infinite;
   z-index: 1;
 }
 
 @keyframes avatarSmoke {
   from { transform: translate(0,0) scale(1); }
-  to   { transform: translate(-8%, -6%) scale(1.15); }
+  to   { transform: translate(-10%, -8%) scale(1.2); }
 }
 
-/* TITLES */
+/* ===== TITLES ===== */
 h1 {
   font-size: 20px;
   letter-spacing: 5px;
@@ -121,7 +121,7 @@ h2 {
   margin-bottom: 28px;
 }
 
-/* BUTTONS */
+/* ===== BUTTONS ===== */
 .button {
   display: block;
   padding: 16px;
@@ -143,12 +143,12 @@ h2 {
   color: #000;
 }
 
-/* SOCIAL */
+/* ===== SOCIALS ===== */
 .socials {
   display: flex;
   justify-content: center;
   gap: 14px;
-  margin: 26px 0 10px;
+  margin: 28px 0 10px;
 }
 
 .social {
@@ -166,7 +166,7 @@ h2 {
   color: #000;
 }
 
-/* FOOTER */
+/* ===== FOOTER ===== */
 .footer {
   margin-top: 48px;
   font-size: 10px;
@@ -178,6 +178,7 @@ h2 {
 
 <body>
 
+<!-- BACKGROUND -->
 <div class="bg">
   <div class="waves">
     <div class="wave-ring"></div>
@@ -186,8 +187,10 @@ h2 {
   </div>
 </div>
 
+<!-- CONTENT -->
 <div class="container">
 
+  <!-- AVATAR -->
   <div class="avatar-wrap">
     <div class="avatar-smoke"></div>
     <div class="avatar"></div>
@@ -200,16 +203,34 @@ h2 {
   <div class="bio-short">
     Артист, работающий на стыке Pop Rock, Pop и Disco Funk.  
     Проникновенный голос и мелодичные рифы создают атмосферу
-    внутренней красоты, любви и путешествия за пределы привычного.
+    внутренней красоты, любви и выхода за пределы привычного.
   </div>
 
+  <!-- BUTTONS -->
   <a class="button" href="about.html">ОБО МНЕ</a>
-
   <a class="button primary" href="mailto:yourmail@email.com">СВЯЗАТЬСЯ</a>
   <a class="button" href="#">ВИДЕО</a>
   <a class="button" href="#">ПРОЕКТЫ</a>
   <a class="button" href="rider.html" target="_blank">РАЙДЕР</a>
 
+  <!-- SOCIALS -->
   <div class="socials">
-    <a class="social" href="https://www.instagram.com/arturrafin/" target="_blank">INSTAGRAM</a>
-    <a class="social" href="https://vk.com/arturra
+    <a class="social" href="https://www.instagram.com/arturrafin/" target="_blank">
+      INSTAGRAM
+    </a>
+    <a class="social" href="https://vk.com/arturrafin" target="_blank">
+      VK
+    </a>
+    <a class="social" href="https://t.me/arturrafin" target="_blank">
+      TELEGRAM
+    </a>
+  </div>
+
+  <div class="footer">
+    FEEL THE IMPACT
+  </div>
+
+</div>
+
+</body>
+</html>
