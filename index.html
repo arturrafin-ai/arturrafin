@@ -17,7 +17,7 @@ body {
   color: #fff;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   min-height: 100vh;
-  overflow: hidden;
+  overflow-y: auto; /* ВКЛЮЧАЕМ СКРОЛЛ */
 }
 
 /* ================= BACKGROUND ================= */
@@ -40,19 +40,18 @@ body {
   position: absolute;
   width: 20vmin;
   height: 20vmin;
-  border: 2px solid rgba(255,255,255,0.28);
+  border: 2px solid rgba(255,255,255,0.25);
   border-radius: 50%;
-  animation: pulse 2.4s infinite ease-out;
+  animation: pulse 2.6s infinite ease-out;
 }
 
-.wave-ring:nth-child(2) { animation-delay: .5s; }
-.wave-ring:nth-child(3) { animation-delay: 1s; }
-.wave-ring:nth-child(4) { animation-delay: 1.5s; }
+.wave-ring:nth-child(2) { animation-delay: .6s; }
+.wave-ring:nth-child(3) { animation-delay: 1.2s; }
 
 @keyframes pulse {
   0% { transform: scale(0.3); opacity: 0.9; }
   70% { opacity: 0.25; }
-  100% { transform: scale(4.4); opacity: 0; }
+  100% { transform: scale(4.6); opacity: 0; }
 }
 
 /* ================= CONTENT ================= */
@@ -61,7 +60,7 @@ body {
   z-index: 2;
   max-width: 420px;
   margin: 0 auto;
-  padding: 48px 22px;
+  padding: 48px 22px 80px;
   text-align: center;
 }
 
@@ -70,7 +69,7 @@ body {
   position: relative;
   width: 120px;
   height: 120px;
-  margin: 0 auto 22px;
+  margin: 0 auto 20px;
 }
 
 .avatar {
@@ -88,10 +87,9 @@ body {
   inset: -40%;
   background:
     radial-gradient(circle at 30% 30%, rgba(255,255,255,0.12), transparent 60%),
-    radial-gradient(circle at 70% 60%, rgba(255,255,255,0.10), transparent 65%),
-    radial-gradient(circle at 50% 80%, rgba(255,255,255,0.08), transparent 70%);
-  filter: blur(35px);
-  opacity: 0.65;
+    radial-gradient(circle at 70% 60%, rgba(255,255,255,0.10), transparent 65%);
+  filter: blur(32px);
+  opacity: 0.6;
   animation: avatarSmoke 18s linear infinite;
   z-index: 1;
 }
@@ -112,20 +110,15 @@ h2 {
   font-size: 11px;
   letter-spacing: 3px;
   color: #ff0000;
-  margin-bottom: 18px;
+  margin-bottom: 14px;
 }
 
-/* ===== ARTIST BIO ===== */
-.bio {
+/* ===== SHORT BIO ===== */
+.bio-short {
   font-size: 12px;
-  line-height: 1.75;
-  letter-spacing: 0.5px;
+  line-height: 1.7;
   color: #dddddd;
-  margin-bottom: 30px;
-}
-
-.bio strong {
-  color: #ffffff;
+  margin-bottom: 28px;
 }
 
 /* BUTTONS */
@@ -173,15 +166,6 @@ h2 {
   color: #000;
 }
 
-/* INFO */
-.section {
-  margin-top: 34px;
-  font-size: 12px;
-  line-height: 1.8;
-  letter-spacing: 1px;
-  color: #ccc;
-}
-
 /* FOOTER */
 .footer {
   margin-top: 48px;
@@ -194,17 +178,14 @@ h2 {
 
 <body>
 
-<!-- BACKGROUND -->
 <div class="bg">
   <div class="waves">
-    <div class="wave-ring"></div>
     <div class="wave-ring"></div>
     <div class="wave-ring"></div>
     <div class="wave-ring"></div>
   </div>
 </div>
 
-<!-- CONTENT -->
 <div class="container">
 
   <div class="avatar-wrap">
@@ -215,45 +196,20 @@ h2 {
   <h1>ARTUR RAFIN</h1>
   <h2>POP ROCK / POP / DISCO FUNK</h2>
 
-  <!-- BIO TEXT -->
-  <div class="bio">
-    Артист, работающий в жанрах <strong>Pop Rock, Pop и Disco Funk</strong>.<br><br>
-
-    На концертах и в студийных записях этого артиста слушатель наполняется
-    чувством подлинной внутренней красоты и любви.
-    Проникновенный голос и мелодичные рифы отправляют в самые далёкие миры,
-    после чего не хочется возвращаться на землю.<br><br>
-
-    Каждая песня — как новая эпоха, отражающая события прошлого.
-    Композиции, написанные в соседних жанрах, гармонично сочетаются
-    в живых выступлениях.<br><br>
-
-    Осенью 2024 года вышел сингл и клип
-    <strong>«Сказала Люблю»</strong>,
-    получившие множество положительных отзывов,
-    попавшие в плей-листы Яндекс Музыки
-    и в <strong>топ-5 песен «Родной звук»</strong>.
+  <!-- SHORT BIO -->
+  <div class="bio-short">
+    Артист, работающий на стыке Pop Rock, Pop и Disco Funk.  
+    Проникновенный голос и мелодичные рифы создают атмосферу
+    внутренней красоты, любви и путешествия за пределы привычного.
   </div>
 
-  <a class="button primary" href="mailto:yourmail@email.com">
-    СВЯЗАТЬСЯ
-  </a>
+  <a class="button" href="about.html">ОБО МНЕ</a>
 
+  <a class="button primary" href="mailto:yourmail@email.com">СВЯЗАТЬСЯ</a>
   <a class="button" href="#">ВИДЕО</a>
   <a class="button" href="#">ПРОЕКТЫ</a>
   <a class="button" href="rider.html" target="_blank">РАЙДЕР</a>
 
   <div class="socials">
     <a class="social" href="https://www.instagram.com/arturrafin/" target="_blank">INSTAGRAM</a>
-    <a class="social" href="https://vk.com/arturrafin" target="_blank">VK</a>
-    <a class="social" href="https://t.me/arturrafin" target="_blank">TELEGRAM</a>
-  </div>
-
-  <div class="footer">
-    FEEL THE IMPACT
-  </div>
-
-</div>
-
-</body>
-</html>
+    <a class="social" href="https://vk.com/arturra
