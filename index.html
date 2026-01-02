@@ -25,53 +25,48 @@ body {
   position: fixed;
   inset: 0;
   z-index: -2;
-  background: #000;
+  background: radial-gradient(circle at center, #0a0a0a, #000 70%);
 }
 
-/* ===== DRUM STICKS ===== */
-.sticks {
+/* ===== DRUM WAVES ===== */
+.waves {
   position: absolute;
   inset: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 60px;
-  opacity: 0.35;
+  display: grid;
+  place-items: center;
 }
 
-.stick {
-  width: 6px;
-  height: 260px;
-  background: linear-gradient(to bottom, #fff, #777);
-  transform-origin: bottom center;
-  animation: hit 0.9s infinite ease-in-out;
+.wave-ring {
+  position: absolute;
+  width: 20vmin;
+  height: 20vmin;
+  border: 2px solid rgba(255,255,255,0.35);
+  border-radius: 50%;
+  animation: pulse 2.2s infinite ease-out;
 }
 
-.stick.left {
-  transform: rotate(-25deg);
-  animation-delay: 0s;
-}
+.wave-ring:nth-child(2) { animation-delay: .4s; }
+.wave-ring:nth-child(3) { animation-delay: .8s; }
+.wave-ring:nth-child(4) { animation-delay: 1.2s; }
 
-.stick.right {
-  transform: rotate(25deg);
-  animation-delay: 0.45s;
+@keyframes pulse {
+  0% {
+    transform: scale(0.3);
+    opacity: 0.9;
+  }
+  70% {
+    opacity: 0.25;
+  }
+  100% {
+    transform: scale(4.2);
+    opacity: 0;
+  }
 }
-
-@keyframes hit {
-  0%   { transform: rotate(var(--angle)) translateY(0); }
-  30%  { transform: rotate(calc(var(--angle) + 20deg)) translateY(-12px); }
-  60%  { transform: rotate(var(--angle)) translateY(0); }
-  100% { transform: rotate(var(--angle)) translateY(0); }
-}
-
-/* assign angles */
-.stick.left { --angle: -25deg; }
-.stick.right { --angle: 25deg; }
 
 /* ===== SMOKE ===== */
 .smoke {
   position: absolute;
-  inset: -30%;
+  inset: -25%;
   background:
     radial-gradient(circle at 30% 40%, rgba(255,255,255,0.06), transparent 60%),
     radial-gradient(circle at 70% 60%, rgba(255,255,255,0.05), transparent 65%),
@@ -165,9 +160,11 @@ h2 {
 
 <!-- BACKGROUND -->
 <div class="bg">
-  <div class="sticks">
-    <div class="stick left"></div>
-    <div class="stick right"></div>
+  <div class="waves">
+    <div class="wave-ring"></div>
+    <div class="wave-ring"></div>
+    <div class="wave-ring"></div>
+    <div class="wave-ring"></div>
   </div>
   <div class="smoke"></div>
 </div>
@@ -196,7 +193,7 @@ h2 {
   </div>
 
   <div class="footer">
-    NO COMPROMISE
+    FEEL THE IMPACT
   </div>
 
 </div>
