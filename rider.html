@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Технический райдер — Artur Rafin</title>
+
+<style>
+body {
+  margin: 0;
+  padding: 32px 18px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #0a0a0a;
+  color: #ffffff;
+}
+
+.wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 22px;
+  letter-spacing: 4px;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #ff0000;
+  margin-bottom: 32px;
+}
+
+.section {
+  margin-bottom: 42px;
+}
+
+.section h2 {
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  padding-bottom: 6px;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  font-size: 13px;
+  line-height: 1.7;
+  color: #dddddd;
+}
+
+ul li::before {
+  content: "— ";
+  color: #ff0000;
+}
+
+.note {
+  font-size: 12px;
+  color: #bbbbbb;
+  line-height: 1.6;
+  margin-top: 10px;
+}
+
+.warning {
+  margin-top: 28px;
+  padding: 14px;
+  border: 1px solid rgba(255,0,0,0.5);
+  font-size: 12px;
+  line-height: 1.6;
+  color: #ffcccc;
+}
+
+/* ================= STAGE PLOT ================= */
+.stage {
+  background: #050505;
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 22px;
+}
+
+.stage-title {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #ff0000;
+  margin-bottom: 14px;
+  text-align: center;
+}
+
+.stage-area {
+  position: relative;
+  height: 360px;
+  border: 1px dashed rgba(255,255,255,0.25);
+  margin-top: 10px;
+}
+
+/* stage elements */
+.item {
+  position: absolute;
+  padding: 8px 10px;
+  font-size: 11px;
+  letter-spacing: 1px;
+  border: 1px solid rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.04);
+  text-align: center;
+}
+
+.drums {
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140px;
+}
+
+.vocal {
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.guitar {
+  bottom: 60px;
+  left: 80px;
+}
+
+.bass {
+  bottom: 60px;
+  right: 80px;
+}
+
+.keys {
+  top: 120px;
+  right: 60px;
+}
+
+.monitor {
+  font-size: 10px;
+  opacity: 0.7;
+  border-style: dashed;
+}
+
+/* monitors positions */
+.mon-drum { top: 190px; left: 50%; transform: translateX(-50%); }
+.mon-vocal { bottom: 90px; left: 50%; transform: translateX(-50%); }
+.mon-guitar { bottom: 90px; left: 60px; }
+.mon-bass { bottom: 90px; right: 60px; }
+
+.footer {
+  margin-top: 48px;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: #666;
+  text-align: center;
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+  <h1>ТЕХНИЧЕСКИЙ РАЙДЕР</h1>
+  <div class="subtitle">ARTUR RAFIN / DRUMS</div>
+
+  <!-- STAGE PLOT -->
+  <div class="section">
+    <h2>STAGE PLOT</h2>
+
+    <div class="stage">
+      <div class="stage-title">ВИД СВЕРХУ (Audience ↓)</div>
+
+      <div class="stage-area">
+        <div class="item drums">DRUMS</div>
+
+        <div class="item vocal">VOCAL</div>
+        <div class="item guitar">GUITAR</div>
+        <div class="item bass">BASS</div>
+        <div class="item keys">KEYS</div>
+
+        <div class="item monitor mon-drum">MON</div>
+        <div class="item monitor mon-vocal">MON</div>
+        <div class="item monitor mon-guitar">MON</div>
+        <div class="item monitor mon-bass">MON</div>
+      </div>
+
+      <div class="note">
+        Сцена указана схематично.  
+        Возможны незначительные изменения по согласованию со звукорежиссёром.
+      </div>
+    </div>
+  </div>
+
+  <!-- TECH -->
+  <div class="section">
+    <h2>ОБЩИЕ ТРЕБОВАНИЯ</h2>
+    <ul>
+      <li>Полная готовность сцены и аппаратуры — до начала саундчека</li>
+      <li>Обязательное присутствие звукорежиссёра и техника сцены</li>
+      <li>Отдельные мониторные линии для каждого участника</li>
+    </ul>
+  </div>
+
+  <div class="warning">
+    При невозможности выполнить любой пункт райдера — просьба связаться заранее.
+  </div>
+
+  <div class="footer">
+    Контакт: +7 903 568-88-24 · Artur
+  </div>
+
+</div>
+
+</body>
+</html>
