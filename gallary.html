@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Фотогалерея — Artur Rafin</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #000;
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow-y: auto;
+}
+
+/* ===== BACKGROUND SMOKE ===== */
+.bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255,255,255,0.06), transparent 60%),
+    radial-gradient(circle at 80% 70%, rgba(255,255,255,0.04), transparent 65%),
+    #000;
+}
+
+/* ===== HEADER ===== */
+.header {
+  text-align: center;
+  padding: 40px 20px 30px;
+}
+
+.header h1 {
+  font-size: 20px;
+  letter-spacing: 5px;
+  margin-bottom: 10px;
+}
+
+.header span {
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: #ff0000;
+}
+
+/* ===== GALLERY GRID ===== */
+.gallery {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 16px 60px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 14px;
+}
+
+/* ===== PHOTO CARD ===== */
+.photo {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.18);
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(100%) contrast(1.05);
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.15), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.photo:hover img {
+  transform: scale(1.08);
+  filter: grayscale(0%) contrast(1.1);
+}
+
+.photo:hover::after {
+  opacity: 1;
+}
+
+/* ===== BACK BUTTON ===== */
+.back {
+  display: block;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.back a {
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: #fff;
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.25);
+  padding: 14px 22px;
+  transition: all 0.2s ease;
+}
+
+.back a:hover {
+  background: #ff0000;
+  color: #000;
+}
+</style>
+</head>
+
+<body>
+
+<div class="bg"></div>
+
+<div class="header">
+  <h1>ФОТОГАЛЕРЕЯ</h1>
+  <span>LIVE / STUDIO / MOOD</span>
+</div>
+
+<div class="gallery">
+  <!-- ЗАМЕНИ ИМЕНА ФАЙЛОВ НА СВОИ -->
+  <div class="photo"><img src="photo1.jpg" alt=""></div>
+  <div class="photo"><img src="photo2.jpg" alt=""></div>
+  <div class="photo"><img src="photo3.jpg" alt=""></div>
+  <div class="photo"><img src="photo4.jpg" alt=""></div>
+  <div class="photo"><img src="photo5.jpg" alt=""></div>
+  <div class="photo"><img src="photo6.jpg" alt=""></div>
+</div>
+
+<div class="back">
+  <a href="index.html">← НАЗАД</a>
+</div>
+
+</body>
+</html>
