@@ -3,25 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Галерея</title>
+<title>ARTUR RAFIN — Gallery</title>
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 html, body {
   width: 100%;
+  height: 100%;
   background: #000;
   color: #fff;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow: hidden;
 }
 
 /* BACKGROUND */
 .bg {
-  position: absolute;
+  position: fixed;
   inset: 0;
   z-index: -1;
   background:
@@ -32,69 +30,69 @@ html, body {
 
 /* HEADER */
 .header {
-  padding: 36px 20px 24px;
-  text-align: center;
-}
-
-.header h1 {
-  font-size: 18px;
-  letter-spacing: 4px;
-}
-
-.header span {
-  display: block;
-  margin-top: 8px;
-  font-size: 10px;
-  letter-spacing: 3px;
-  color: #ff0000;
-}
-
-/* GRID */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  padding: 20px;
-}
-
-.photo {
-  border: 1px solid rgba(255,255,255,0.2);
-}
-
-.photo img {
-  width: 100%;
-  display: block;
-}
-
-/* VIEWER */
-.viewer {
   position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.95);
+  top: 0;
+  width: 100%;
+  text-align: center;
+  padding: 14px 0;
+  font-size: 12px;
+  letter-spacing: 4px;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(6px);
+  z-index: 10;
+}
+
+/* SWIPER */
+.swiper {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.swiper::-webkit-scrollbar {
   display: none;
+}
+
+.slide {
+  min-width: 100%;
+  height: 100%;
+  scroll-snap-align: center;
+  display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 999;
 }
 
-.viewer img {
-  max-width: 90%;
-  max-height: 90%;
+/* IMAGE */
+.slide img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  user-select: none;
+  pointer-events: none;
 }
 
-/* BACK */
+/* BACK BUTTON */
 .back {
-  text-align: center;
-  padding: 30px 0 50px;
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 22px;
+  border: 1px solid rgba(255,255,255,0.25);
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-decoration: none;
+  color: #fff;
+  transition: all .2s ease;
+  background: rgba(0,0,0,0.5);
 }
 
-.back a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 12px;
-  letter-spacing: 3px;
-  border: 1px solid rgba(255,255,255,0.3);
-  padding: 12px 20px;
+.back:hover {
+  background: #ff0000;
+  color: #000;
 }
 </style>
 </head>
@@ -103,66 +101,17 @@ html, body {
 
 <div class="bg"></div>
 
-<div class="header">
-  <h1>ФОТОГАЛЕРЕЯ</h1>
-  <span>LIVE / STUDIO</span>
-</div>
+<div class="header">GALLERY</div>
 
-<div class="gallery" id="gallery">
-  <!-- запас под 30 фото -->
-  <div class="photo"><img src="photo01.jpg"></div>
-  <div class="photo"><img src="photo02.jpg"></div>
-  <div class="photo"><img src="photo03.jpg"></div>
-  <div class="photo"><img src="photo04.jpg"></div>
-  <div class="photo"><img src="photo05.jpg"></div>
-  <div class="photo"><img src="photo06.jpg"></div>
-</div>
+<div class="swiper">
 
-<div class="back">
-  <a href="index.html">← НАЗАД</a>
-</div>
+  <!-- 30 SLIDES -->
+  <!-- Если фото нет — просто не загрузи файл, браузер покажет пустоту без ошибки -->
 
-<div class="viewer" id="viewer">
-  <img id="viewerImg">
-</div>
-
-<script>
-(function(){
-  const imgs = document.querySelectorAll('.photo img');
-  const viewer = document.getElementById('viewer');
-  const viewerImg = document.getElementById('viewerImg');
-  let current = 0;
-  let startX = 0;
-
-  const validImages = [];
-
-  imgs.forEach(img => {
-    img.onerror = () => img.parentElement.remove();
-    img.onload = () => validImages.push(img.src);
-
-    img.onclick = () => {
-      current = validImages.indexOf(img.src);
-      viewerImg.src = img.src;
-      viewer.style.display = 'flex';
-    };
-  });
-
-  viewer.onclick = () => viewer.style.display = 'none';
-
-  viewer.addEventListener('touchstart', e => {
-    startX = e.touches[0].clientX;
-  });
-
-  viewer.addEventListener('touchend', e => {
-    const delta = e.changedTouches[0].clientX - startX;
-    if (Math.abs(delta) > 50) {
-      if (delta < 0 && current < validImages.length - 1) current++;
-      if (delta > 0 && current > 0) current--;
-      viewerImg.src = validImages[current];
-    }
-  });
-})();
-</script>
-
-</body>
-</html>
+  <div class="slide"><img src="gallery/1.jpg" onerror="this.style.display='none'"></div>
+  <div class="slide"><img src="gallery/2.jpg" onerror="this.style.display='none'"></div>
+  <div class="slide"><img src="gallery/3.jpg" onerror="this.style.display='none'"></div>
+  <div class="slide"><img src="gallery/4.jpg" onerror="this.style.display='none'"></div>
+  <div class="slide"><img src="gallery/5.jpg" onerror="this.style.display='none'"></div>
+  <div class="slide"><img src="gallery/6.jpg" onerror="this.style.display='none'"></div>
+  <
