@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ARTUR RAFIN — Концерты</title>
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background: #000;
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* BACKGROUND */
+.bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(255,255,255,0.06), transparent 60%),
+    radial-gradient(circle at 70% 70%, rgba(255,255,255,0.04), transparent 65%),
+    #000;
+}
+
+/* HEADER */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  padding: 14px 0;
+  font-size: 12px;
+  letter-spacing: 4px;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(6px);
+  z-index: 10;
+}
+
+/* CONTAINER */
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px 100px;
+}
+
+/* CARD */
+.card {
+  width: 100%;
+  max-width: 360px;
+  border: 1px solid rgba(255,255,255,0.25);
+  padding: 18px;
+  text-align: center;
+  transition: all .3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 0 40px rgba(255,0,0,0.35);
+}
+
+/* PHOTO */
+.photo {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: url("concert.jpg") center/cover no-repeat;
+  margin-bottom: 18px;
+}
+
+/* TEXT */
+.date {
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: #ff0000;
+  margin-bottom: 8px;
+}
+
+.title {
+  font-size: 14px;
+  letter-spacing: 2px;
+  line-height: 1.6;
+}
+
+/* BACK BUTTON */
+.back {
+  position: fixed;
+  bottom: 26px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 22px;
+  border: 1px solid rgba(255,255,255,0.25);
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-decoration: none;
+  color: #fff;
+  transition: all .2s ease;
+  background: rgba(0,0,0,0.5);
+}
+
+.back:hover {
+  background: #ff0000;
+  color: #000;
+}
+</style>
+</head>
+
+<body>
+
+<div class="bg"></div>
+
+<div class="header">КОНЦЕРТЫ</div>
+
+<div class="container">
+  <div class="card">
+    <div class="photo"></div>
+
+    <div class="date">
+      22 ЯНВАРЯ · 20:00
+    </div>
+
+    <div class="title">
+      КОНЦЕРТ<br>
+      КЛУБ «СОБАКИ В ТУМАНЕ»
+    </div>
+  </div>
+</div>
+
+<a class="back" href="index.html">НАЗАД</a>
+
+</body>
+</html>
